@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import {
-  AppRegistry, StyleSheet, Text, 
-  View, Navigator, } from 'react-native';
-  import treeGame from './components/plantillaTree';
-  import fourGame from './components/plantillaFour';
+import {StyleSheet, Text, 
+  View, } from 'react-native';
+  import {
+    createStackNavigator,
+  } from 'react-navigation';
+  import TreeGame from './components/plantillaTree';
+  import FourGame from './components/plantillaFour';
 
-  export default class App extends Component {
-    constructor() {
-      super()
-      this.renderScene = this.renderScene.bind(this);
-    }
-
-    renderScene(route) {
-      if(route.name === 'treeGame'){
-        return <treeGame navigator = {navigator}/>
-      } else if(name === 'fourGame') {
-        return <fourGame navigator = {navigator}/>
-      }
-    }
-    render() {
-      return(
-        <Navigator 
-          initialRoute = {{name: 'treeGame'}}
-          renderScene= {this.renderScene}
-        />
-      );
-    }
-  }
-
-  AppRegistry.registerComponent('Routing', () => App);
+  const App = createStackNavigator({
+    TreeGame: {screen: TreeGame,
+      navigationOptions: ({navigation}) => ({
+        title: 'TreeGame',
+        headerTitleStyle: {color: "white"},
+        headerStyle: {
+          backgroundColor: "salmon",
+        },
+      }),
+    },
+    FourGame: {screen: FourGame,
+      navigationOptions: ({navigation}) => ({
+        title: 'FourGame',
+        headerTitleStyle: {color: "white"},
+        headerStyle: {
+          backgroundColor: "pink",
+        },
+      }),
+    },
+  });
+  export default App;
+  

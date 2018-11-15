@@ -1,8 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, Button, } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Button, Image, } from 'react-native';
+import { Icon } from 'react-native-elements';
+import {
+    createStackNavigator,
+} from 'react-navigation';
 
-export default class treeGame extends React.Component {
+export default class TreeGame extends React.Component {
 constructor(props){
     super(props);
     this.state = {
@@ -14,12 +17,8 @@ constructor(props){
         currentPlayer: 1,
         currentIcon: 'x',
     }
-    this.navigate = this.navigate.bind(this);
     }
 
-    navigate (name) {
-        this.props.navigator.push({name})
-    }
     componentDidMount() {
     this.initializeGame();
 }
@@ -160,17 +159,22 @@ OnNewGamePress = () => {
 renderIcon = (row,col) => {
     var value = this.state.gameState[row][col];
     switch (value) {
-        case 1:return <Icon name = "close" style= {styles.tileX}></Icon>;
-        case -1:return <Icon name = "check" style= {styles.tileO}></Icon>;
+        case 1:return <Image style={{width: 70, height: 70}} source={require('../assets/ardilla.png')} /> // <Icon name = "close" style= {styles.tileX}></Icon>;
+        case -1:return <Image style={{width: 70, height: 70}} source={require('../assets/mazo.png')} /> // <Icon name = "check" style= {styles.tileO}></Icon>;
         default:return <View />;
     }
 }
+static navigationOptions = ({navigation}) => ({
+});
     render() {
     return (
         <View style={styles.container}>
-        <Text>Tic Tac toe!</Text>
+        <Text>Wacka Molet Tap!!</Text>
+        <View style = {{paddingTop: 10}}></View>
         <Text>Jugador en turno: {this.state.currentPlayer}</Text>
+        <View style = {{paddingTop: 10}}></View>
         <Text>Icono en turno: {this.state.currentIcon}</Text>
+        <View style = {{paddingTop: 5}}></View>
         <View style = {{flexDirection: "row"}}>
             <TouchableOpacity onPress = {() => this.onTilePress(0,0)} style = {[styles.tile, { borderLeftWidth: 0, borderTopWidth: 0}]}>
                 {this.renderIcon(0,0)}
@@ -204,9 +208,11 @@ renderIcon = (row,col) => {
             {this.renderIcon(2,2)}
             </TouchableOpacity>
         </View>
-        <View style = {{paddingTop: 50}}></View>
+        <View style = {{paddingTop: 20}}></View>
         <Button title= "New Game" onPress = {this.OnNewGamePress} />
-        <Button onPress = {() => this.navigate('fourGame')}>Go to four game</Button>
+        <View style = {{paddingTop: 20}}></View>
+        <Button title= "Go to four Game"
+        onPress= {() => {this.props.navigation.navigate('FourGame');}}/>
         </View>
         );
     }
@@ -215,21 +221,21 @@ renderIcon = (row,col) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5fcff',
+        backgroundColor: 'gray',
         alignItems: 'center',
         justifyContent: 'center',
     },
     tile: {
-        borderWidth: 2,
-        width: 100,
-        height: 100,
+        borderWidth: 1,
+        width: 80,
+        height: 80,
     },
     tileX: {
-        color: "red",
-        fontSize:  80,
+        justifyContent: 'center',
+        fontSize:  50,
     },
     tileO: {
-        color: "green",
-        fontSize:  80,
+        justifyContent: 'center',
+        fontSize:  40,
     }
 }); 

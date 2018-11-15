@@ -1,5 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, Button, } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Button, Image, } from 'react-native';
+import {
+    createStackNavigator,
+  } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 
 export default class FourGame extends React.Component {
@@ -157,17 +160,21 @@ export default class FourGame extends React.Component {
   renderIcon = (row,col) => {
     var value = this.state.gameState[row][col];
     switch (value) {
-      case 1:return <Icon name = "close" style= {styles.tileX}></Icon>;
-      case -1:return <Icon name = "check" style= {styles.tileO}></Icon>;
+      case 1:return <Image style={{width: 50, height: 50}} source={require('../assets/ardilla.png')} /> // <Icon name = "close" style= {styles.tileX}></Icon>;
+      case -1:return <Image style={{width: 50, height: 50}} source={require('../assets/mazo.png')} /> // <Icon name = "check" style= {styles.tileO}></Icon>;
       default:return <View />;
     }
   }
   render() {
+      const {goback} = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text>Wacka Molet Tap!!</Text>
+        <View style = {{paddingTop: 5}}></View>
         <Text>Jugador en turno: {this.state.currentPlayer}</Text>
+        <View style = {{paddingTop: 5}}></View>
         <Text>Icono en turno: {this.state.currentIcon}</Text>
+        <View style = {{paddingTop: 5}}></View>
         <View style = {{flexDirection: "row"}}>
           <TouchableOpacity onPress = {() => this.onTilePress(0,0)} style = {[styles.tile, { borderLeftWidth: 0, borderTopWidth: 0}]}>
             {this.renderIcon(0,0)}
@@ -224,9 +231,11 @@ export default class FourGame extends React.Component {
           {this.renderIcon(3,3)}
           </TouchableOpacity>
         </View>
-        <View style = {{paddingTop: 50}}></View>
+        <View style = {{paddingTop: 30}}></View>
         <Button title= "New Game" onPress = {this.OnNewGamePress} />
-        <Button onPress= {() => this.props.navigator.pop()}>Go back tree game</Button>
+        <View style = {{paddingTop: 30}}></View>
+        <Button title= "Go to tree Game"
+        onPress= {() => {this.props.navigation.goBack();}}/>
       </View>
     );
   }
@@ -235,21 +244,19 @@ export default class FourGame extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5fcff',
+    backgroundColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center',
   },
   tile: {
-    borderWidth: 2,
-    width: 100,
-    height: 100,
+    borderWidth: 1,
+    width: 60,
+    height: 60,
   },
   tileX: {
-    color: "red",
-    fontSize:  80,
+    fontSize:  50,
   },
   tileO: {
-    color: "green",
-    fontSize:  80,
+    fontSize:  50,
   }
 });
