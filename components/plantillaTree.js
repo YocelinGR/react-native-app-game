@@ -15,7 +15,7 @@ constructor(props){
         [0,0,0]
     ],
         currentPlayer: 1,
-        currentIcon: 'x',
+        currentIcon: 'ardilla',
     }
     }
 
@@ -31,7 +31,7 @@ initializeGame = () => {
         [0,0,0]
     ],
     currentPlayer: 1,
-    currentIcon: 'x',
+    currentIcon: 'ardilla',
     });
 }
 
@@ -85,7 +85,7 @@ onTilePress = (row,col) => {
 
     var nextPlayer = (currentPlayer == 1) ? -1 : 1;
     this.setState({currentPlayer: nextPlayer});
-    var nexIcon = (currentIcon == 'x' ? 'o': 'x'); 
+    var nexIcon = (currentIcon == 'ardilla' ? 'mazo': 'ardilla'); 
     this.setState({currentIcon: nexIcon});
 
     var winner = this.getWinner();
@@ -93,25 +93,25 @@ onTilePress = (row,col) => {
     switch (winner[1]) {
         case 0:
             {
-                Alert.alert("Player 1 with x icon is the winner. Vertical winner");
+                Alert.alert("Jugador 1 con icono de ardilla es el ganador. Jugada Vertical");
                 this.initializeGame();
             }
             break;
         case 1:
         {
-            Alert.alert("Player 1 with x icon is the winner. Horizontal winner");
+            Alert.alert("Jugador 1 con icono de ardilla es el ganador. Jugada Horizontal");
             this.initializeGame();
         }
         break;
         case 2:
         {
-            Alert.alert("Player 1 with x icon is the winner. Diagonal Left winner");
+            Alert.alert("Jugador 1 con icono de ardilla es el ganador. Jugada Diagonal izq");
             this.initializeGame();
         }
         break;
         case 3:
         {
-            Alert.alert("Player 1 with x icon is the winner. Diagonal rigth winner");
+            Alert.alert("Jugador 1 con icono de ardilla es el ganador. Jugada Diagonal der");
             this.initializeGame();
         }
         break;
@@ -120,25 +120,25 @@ onTilePress = (row,col) => {
     switch (winner[1]) {
         case 0:
             {
-                Alert.alert("Player 2 with o icon is the winner. Vertical winner");
+                Alert.alert("Jugador 2 con icono de mazo es el ganador. Jugada Vertical");
                 this.initializeGame();
             }
             break;
         case 1:
         {
-            Alert.alert("Player 2 with o icon is the winner. Horizontal winner");
+            Alert.alert("Jugador 2 con icono de mazo es el ganador. Jugada Horizontal");
             this.initializeGame();
         }
         break;
         case 2:
         {
-            Alert.alert("Player 2 with o icon is the winner. Diagonal Left winner");
+            Alert.alert("Jugador 2 con icono de mazo es el ganador. Jugada Diagonal izq");
             this.initializeGame();
         }
         break;
         case 3:
         {
-            Alert.alert("Player 2 with 0 icon is the winner. Diagonal rigth winner");
+            Alert.alert("Jugador 2 con icono de mazo es el ganador. Jugada Diagonal de");
             this.initializeGame();
         }
         break;
@@ -159,7 +159,7 @@ OnNewGamePress = () => {
 renderIcon = (row,col) => {
     var value = this.state.gameState[row][col];
     switch (value) {
-        case 1:return <Image style={{width: 70, height: 70}} source={require('../assets/ardilla.png')} /> // <Icon name = "close" style= {styles.tileX}></Icon>;
+        case 1:return <Image style={{width: 70, height: 70}} source={require('../assets/ardilla.png')} /> 
         case -1:return <Image style={{width: 70, height: 70}} source={require('../assets/mazo.png')} /> // <Icon name = "check" style= {styles.tileO}></Icon>;
         default:return <View />;
     }
