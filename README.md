@@ -1,268 +1,243 @@
-# Tic tac toe - App Native
+# Tic Tac Toe
+## Documentación y desarrollo
+________________________________________
+1. Getting started
 
-## Preámbulo
+Explicar y comentar los procesos, comandos y procedimientos para poner el proyecto en marcha, compilar, gestionar dependencias, etc.
 
-En este proyecto vamos a construir un simple videojuego de _3 en raya_, también
-conocido como _Gato_ o _tic tac toe_ en inglés, para celulares y tabletas.
+•	Como usuario: Acceder a la URL de la aplicación en Expo desde tu celular (https://expo.io/@yocelingr/myApp), escanea el código QR y comienza a usar la App. 
 
-Para construir el juego vamos a usar [React Native](https://facebook.github.io/react-native/), [Vue Native](https://vue-native.io/), [NativeScript](https://www.nativescript.org/) ó cualquier herramienta que sea de tu elección que nos permita construir aplicaciones _nativas_ ( **NO** _híbridas_) que se
-puedan instalar y ejecutar en dispositivos Android e iOS, y todo ello usando
-JavaScript y La herramienta que elijas para componer nuestra interfaz.
+•	Como desarrollador: Acceder a la liga del repositorio, forkear y clonar el repositorio, abrir el repositorio local haciendo uso de un editor (VisualStudioCode, Atom, etc.). 
 
-Nuestro público objetivo en este caso son niños en edad pre-escolar, así que el
-juego debe ser simple, intuitivo, con botones grandes, poco o nada de texto, ...
+En una terminal de línea de comandos ejecuta los comandos: “npm init” y  adapta el archivo package.json a tu proyecto, además correo el comando “yarn install” para instalar las dependencias necesarias. Realizar las modificaciones necesarias en los archivos tomando como base la explicación sobre ficheros, archivos y funciones especificados antes, guardar los cambios y visualizarlos desde la línea de comandos corriendo “expo start”, espera a que aparezca el código QR, escanéalo de expo para visualizar los cambios. 
 
-## Introducción
+Para contribuir al proyecto, haz un pull request a la liga de GitHub del repositorio original y esperar a que el dueño del repositorio master apruebe o rechace el commit.
+Finalmente, puedes crear una cuenta en expo y ejecutar en CLI el comando “expo build: android” desde tus credenciales para subir a la aplicación tus cambios. 
 
-Como desarrolladores web, sabemos que podemos contruir PWAs (_Progressive Web
-Apps_) dirigidas a todo tipo de dispositivos, incluyendo celulares y tabletas,
-pero hay ciertas situaciones donde podemos preferir una app nativa, como cuando
-necesitamos acceso al hardware del dispositivo, UI nativa, código nativo (Java,
-Objective C, ...) o que se pueda instalar a través de un
-[App Store](https://www.apple.com/lae/ios/app-store/)
-o [Google Play](https://play.google.com/).
+2. Definición de objetivos y estrategia
 
-Exisen muchas herramientas y plataformas para construir aplicaciones para
-dispositivos móviles, con soluciones que van desde
-[PWA](https://developers.google.com/web/progressive-web-apps/), hasta 100%
-nativo, pasando por soluciones híbridas (como [Phonegap](https://phonegap.com/)).
-A diferencia de las soluciones híbridas, que han sido populares con
-desarrolladores web en el pasado, React Native nos permite construir
-aplicaciones realmente _nativas_, pero usando JavaScript y la herramienta elegida. Esto significa
-mejor _performance_ y acceso directo al sistema en vez de estar confinado a una
-vista _web_.
+En esta sección se definirán los resultados que busca el cliente, se propondrán las diferentes opciones que podrían ayudar a conseguir los objetivos y se buscará llegar a un acuerdo con el cliente, para ello es importante definir estrategias que definirán si se desarrollará un juego de gato como aplicación nativa en Android, iOS o PWA.
 
-## Objetivos
+El objetivo principal de este proyecto es desarrollar un juego nativo para celular, bien para Android o iOS, para este proyecto será necesario hacer uso de un Framework nativo como: React Native, Native Script u otros.
 
-El objetivo principal de aprendizaje es tener una primera experiencia en
-desarrollo de aplicaciones **NATIVAS**.
+•	Objetivos del cliente:
 
-En este proyecto tendrás que construir una aplicación **Nativa** y
-Expo, y así publicarla en tu cuenta de Expo, para que se pueda instalar en cualquier dispositivo Android o iOS.
+o	Muestra grilla (grid) de 3x3 y opcionalmente de 4x4
 
-Para completar el proyecto tendrás que familiarizarte con conceptos como `View`,
-`Text` o `TouchableOpacity`, además del flujo de desarrollo propio de apps
-nativas.
+o	Muestra jugador al que le toca su turno para jugar
 
-## Consideraciones generales
+o	Permite marcar cajita vacía
 
-La lógica del proyecto debe estar implementada completamente en JavaScript (ES6) y la librería o framework que sea de tu elección.
+o	Cambia el turno después de marcar caja 
 
-Este proyecto no incluye un _boilerplate_ per se. En vez de un _boilerplate_ te ofrecemos una serie de instrucciones (ver sección "Primeros pasos" más abajo)
-para que inicialices tu proyecto desde cero.
+o	No permite marcar una caja ya marcada
 
-## Parte obligatoria
+o	Permite reiniciar la partida
 
-### UI
+o	Detecta jugadas ganadoras en eje x
 
-Una imagen vale más que mil palabras:
+o	Detecta jugadas ganadoras en eje y
 
-![tictactoe](https://user-images.githubusercontent.com/110297/46983454-378df980-d0a6-11e8-87d0-905e99b12af7.gif)
+o	Detecta jugadas ganadoras en diagonales
 
-La interfaz debe permitir jugar el juego de _3 en raya_ como se muestra en la
-animación de arriba. Eso sí, a nivel de estilos (colores, tipografía, ...)
-tienes total libertad de proponer lo que consideres.
+o	Muestra jugador ganador cuando gana
 
-## Hacker edition
+o	Muestra jugada ganadora cuando hay ganador
 
-* Grilla (grid) configurable (3x3, 4x4, ...)
+o	Muestra empate cuando nadie gana y no quedan cajitas que marcar
 
-## Entrega
+o	Permitir volver a empezar cuando termina una partida (alguien ganó o empate)
 
-Como entregables, al final del proyeto debes presentar:
+•	Objetivos técnicos:
 
-* Link a repositorio en GitHub con tu código fuente
-* Link a tu aplicación desplegada en tu perfil en el website de [Expo](https://expo.io/).
+o	Uso de aplicaciones nativas: Se sugiere el uso de React Native, Native Script, Vue Native o Ionic. 
 
-## Evaluación
+o	Manejo de EXPO para los despliegues y pruebas de funcionalidad. 
 
-Te aconsejamos revisar [la rúbrica](https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQy1waRpQ-16sn7VogiDTy-Fz5e7OSZSYUCiHC_bkLAKYewr4L8pWJ_BG210PeULe-TjLScNQQT_x/pubhtml#)
-para ver la descripción detallada de cada _habilidad_ y cada _nivel_.
+Adicionalmente se sugiere el uso de Android Studio, Android Simulator y Xcode para hacer despliegues y posterior incorporación a plataformas como GooglePlay.  
 
-### Tech
+o	Manejo de interacciones /eventos táctiles con la pantalla.
 
-| Habilidad | Nivel esperado |
-|-----------|----------------|
-| **JavaScript** | |
-| Estilo | 5
-| Nomenclatura/semántica | 3
-| Funciones/modularidad | 3
-| Estructuras de datos | 2
-| Tests | 4
-| **SCM** | |
-| Git | 3
-| GitHub | 3
-| **CS** | |
-| Lógica | 3
-| Arquitectura | 3
+o	Manejo de navegación entre vistas en la aplicación nativa.
 
-***
+o	Uso de iconos y splash para diferentes dispositivos. 
 
-## Primeros pasos
-
-### Dependencias
+o	Manejo de estado en el DOM del dispositivo. 
 
-#### Expo
-
-La manera más fácil de empezar un nuevo proyecto de React Native es usando Expo,
-que es un conjunto de herramientas, librerįas y servicios que nos permiten
-construir aplicaciones Android e iOS nativas escribiendo JavaScript.
-
-Instalemos la herramienta de línea de comando de `expo`:
-
-```sh
-# Instala la herramienta de línea de comando `expo` de forma global.
-npm install -g expo-cli
-```
+3.  Desarrollo de contenidos
 
-Una vez insalada, deberías poder ejecutar el comando `expo` en tu terminal:
+El apartado debe definir el contenido del sitio, listar las páginas que es relevante tener, detallando información sobre su contenido, además es necesario redactar los textos para mostrarse.
 
-```sh
-$ expo -V
-2.2.0
-```
+•	Splash: Muestra  un conejo con fondo negro para hacer más amigable la espera de carga del juego.
 
-#### Emulador / Dispositivo
-
-En este proyecto, al tratarse de una aplicación nativa, no podemos _ver_ nuestra
-aplicación en el navegador, sino que necesitamos un dispositivo real o un
-emulador de Android y/o iOS.
+•	1er Vista: Juego de Tic Tac Toe en una grilla de 3x3. 
 
-##### Expo App en dispositivos reales
+La temática del juego es el típico juego de gato con iconos referentes al clásico juego Whack a Mole, por lo cual se hace uso de una ardilla y un mazo como iconos para las partidas, además se muestran los textos: Whack a Mole Tap!, Jugador en turno: 1 o 2 e Icono en turno: ardilla o mazo. Además, cuenta con dos botones, el primero reinicia la partida, y el segundo dirige a una grilla de 4x4 con el mismo juego.  
 
-Para ejecutar la aplicación en dispositivos reales tendrás que instalar la app
-de Expo (disponible en [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent)
-y [Apple App Store](https://itunes.apple.com/us/app/expo-client/id982107779?mt=8)).
+•	2ª Vista: Cuenta con una grilla de 4x4 del juego de gato con la misma temática de ardillas y mazos, incluye un NavBar y fondo con colores diferentes a la vista anterior, además cuenta con un botón para reiniciar la partida, otro para regresar a la grilla de 3x3 y un flecha en la parte superior izquierda para regresar a la vista anterior. 
 
-##### Expo App en emuladores
+4. Propuesta de diseño
 
-Para ejecutar la aplicación en un emulador, te recomendamos instalar las
-herramientas para desarrolladores de Android y/o iOS (ambas incluyen el emulador
-correspondiente).
+Es necesario presentar bocetos de la estructura de cada plantilla del sitio, realizar el diseño de mediana y alta fidelidad y finalmente presentar el diseño de la plataforma. Es propio presentar y testear las páginas, se sugiere el uso de invision para dar tour por cada pantalla en futuros proyectos.
 
-* [Android Studio](https://developer.android.com/studio/)
-* [Xcode](https://developer.apple.com/xcode/)
+•	Diseño de baja fidelidad: 
 
-### Inicializar proyecto
+![Wireframe vista 1]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/wireframe2.jpg?raw=true)
 
-Ahora que ya tenemos todas las herramientas listas, haz un _fork_ de este
-repositorio y clónalo en tu computadora. Dentro de la carpeta del proyecto
-ejecutamos el siguiente comando para inicializar nuestro proyecto con Expo:
+![Wireframe vista 2:grilla 3x3]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/wireframe1.jpg?raw=true)
 
-```sh
-# inicializa proyecto con expo en directorio actual
-expo init ./
-```
+![Wireframe vista 3:grilla 4x4]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/wireframe3.jpg?raw=true)
+•	Diseño del sitio final:
+![Wireframe vista 1: inicio ]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/ardilla.png?raw=true)
 
-Al invocar este comando, nos preguntará que _plantilla_ (_template_) queremos
-usar. Elige `blank`.
+![Wireframe vista 2: grilla 3x3]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/screen3.png?raw=true)
 
-```txt
-? Choose a template: (Use arrow keys)
-❯ blank
-  The Blank project template includes the minimum dependencies to run and an empty root component.
-  tabs
-  The Tab Navigation project template includes several example screens.
-```
-
-Esto creará una serie de archivos y carpetas, incluyendo un archivo
-`package.json`, así como un `app.json` , nuestro componente principal `App.js` y
-otros archivos de configuración y dependencias. La carpeta del proyecto debería
-contener los siguientes archivos:
-
-```sh
-$ tree . -L 1 -a
-.
-├── App.js
-├── app.json
-├── assets
-├── .babelrc
-├── .git
-├── .gitignore
-├── node_modules
-├── package.json
-├── README.md
-└── .watchmanconfig
-
-3 directories, 6 files
-```
-
-Si abrimos el archivo `App.js`, veremos que éste exporta un componente de
-`React`. Este componente es el punto de partida de nuestra aplicación. La mayor
-diferencia con `React` para la web, es que en `React Native` veremos que no hay
-DOM, sino que usamos componentes que usan APIs nativas propias de dispositivos
-móviles, como `View`, `Text` o `TouchableOpacity` y los estilos los vamos a
-manejar con una utilidad llamada `StyleSheet` que es parte de `React Native`.
-De esta forma, podemos usar los mismos patrones de diseño que usaríamos en
-cualquier otra interfaz contruida con `React`.
-
-En este archivo podríamos importar otros componetes que implementemos así como
-cualquier otro módulo de JavaScript.
-
-### Ejecutar aplicación en modo de desarrollo
-
-Llegado a este punto ya estamos listos para _ver_ nuestra aplicación en un
-dispositivo (real o emulado). Para ello, `expo` nos ofrece un comando que
-_arrancará_ la aplicación y automáticamente la reconstruirá cada vez que
-hagamos cambios (_hot reloading_).
-
-```sh
-expo start
-```
-
-Al ejecutar el comando anterior deberías ver algo como esto:
-
-![screenshot from 2018-10-15 18-34-34](https://user-images.githubusercontent.com/110297/46984113-46c27680-d0a9-11e8-8136-3feaa0297cba.png)
-
-Si has instalado la aplicación cliente de Expo en tu dispositivo, puedes
-escanear el código QR para abrir la app, o alternativamente, si has instalado un
-emulador, puedes también abrir la app en dicho emulador (ver las opciones que
-nos muestra debjo del código de barras).
-
-El comando `expo start` también debería abrir una pestaña en tu navegador
-apuntando a `http://localhost:19002/`. En esta página podrás ver una interfaz
-parecida a la que vimos en la línea de comando, pero esta vez en versión
-gráfica, como una página web.
-
-![screenshot from 2018-10-15 18-38-31](https://user-images.githubusercontent.com/110297/46984223-c4868200-d0a9-11e8-8458-ee785ef8e9f0.png)
-
-### Despliegue
-
-Como paso final, para publicar tu aplicación en la plataforma de Expo puedes
-usar la interfaz mostrada en el paso enterior (hay un link que dice _Publish or
-republish project..._) o a través de la línea de comando:
-
-```sh
-expo publish
-```
-
-***
-
-## Tips / Pistas
-
-* [React Native](https://facebook.github.io/react-native/)
-* [Vue Native](https://vue-native.io/)
-* [Ionic](https://ionicframework.com/)
-* [Expo](https://expo.io/)
-* [Desarrollo Más Fácil React Native con Expo - Evato Tuts+](https://code.tutsplus.com/es/tutorials/easier-react-native-development-with-expo--cms-30546)
-* [Android Studio](https://developer.android.com/studio/)
-* [Android Emulator](https://developer.android.com/studio/run/emulator)
-* [Xcode](https://developer.apple.com/xcode/)
-
-## Checklist
-
-### UI
-
-* [ ] Muestra grilla (grid) de 3x3
-* [ ] Muestra jugador al que le toca su turno
-* [ ] Permite marcar cajita vacía
-* [ ] Cambia el turno después de marcar cajita
-* [ ] No permite marcar cajita ya marcada
-* [ ] Permite reiniciar la partida
-* [ ] Detecta jugadas ganadoras en eje x
-* [ ] Detecta jugadas ganadoras en eje y
-* [ ] Detecta jugadas ganadoras en diagonales
-* [ ] Muestra jugador ganador cuando gana
-* [ ] Muestra jugada ganadora cuando hay ganador
-* [ ] Muestra empate cuando nadie gana y no quedan cajitas que marcar
-* [ ] Permire volver a empezar cuando termina una partida (alguien ganó o empate)
+![Wireframe vista 3: grilla 4x4]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/screen1.png?raw=true)
+
+![Wireframe vista 4: alert]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/alert.png?raw=true)
+
+ 5. Desarrollo y maquetación
+
+El desarrollo y maquetación del proyecto se realizó utilizando los elementos de “react-native-elements” y “react-native”, además de usaron elementos de imágenes para complementar el diseño, estos archivos se pueden encontrar en la carpeta assets del proyecto.
+
+6. Dar revisión y capacitación
+
+Se da una asesoría al cliente sobre el uso y administración del sitio.
+
+Se da explicación de uso de la página y donde se explican los detalles más importantes de la implementación. Se otorga un periodo de un mes al cliente para encontrar posibles fallas o dudas sobre el sistema, después de este periodo se podría requerir alguna gratificación por asesorías.
+
+7. Publicación en el servidor o URL definitiva
+
+Se entrega una liga en GitHub Pages y la liga del código QR para escanear el juego usarlo desde expo. 
+
+see [Repositorio] (https://github.com/YocelinGR/react-native-app-game)
+
+see [QR Expo] (https://expo.io/@yocelingr/myApp)
+
+Para poder hacer uso del juego desde el celular, se sugiere ir al siguiente enlace: see [Expo para Android] (https://play.google.com/store/apps/details?id=host.exp.exponent&hl=es), e instalar la aplicación, posteriormente se sugiere escanear el código QR desde la aplicación de Expo. Por el momento, el juego no se encuentra disponible en iOS, pero se espera que esta construcción esté disponible pronto. 
+
+8. Documentación
+
+•	Tecnologías
+
+Descripción de tecnologías, Frameworks, compiladores, gestores de tareas, librerías, su versión y cómo se usa.
+
+•	React Native (RN): Es un Cross-Platform Framework que permite desarrollar aplicaciones nativas para Android e iOS usando JavaScript. A diferencia de otras tecnologías para desarrollo de APPs nativas (como Cordova), RN renderiza las vistas como vistas nativas y no como webViews. RN ofrece un conjunto de componentes React equivalentes a nativos. 
+
+•	Unit Test con Jest: Herramienta para elaborar test unitarios en JavaScript, que destaca por su sencillez de uso, por su flexibilidad y por ser adaptable a nuevas librerías que incrementan su poder, es parte de Node.js. En el proyecto se usan los test unitarios como medio de comprobar que la calidad de ejecución de las funciones es buena, que cumple con los mínimos requerimientos y que devuelven solo la información necesaria.
+
+•	Expo: Es un conjunto de  herramientas, librerías y servicios  open source que ayudan a desarrollar apps nativas en iOS Y Android, escritas en JavaScript que provee acceso a la funcionalidad del dispositivo como a la cámara, contactos, almacenamiento local, etc., todo sin modificar el código nativo, conservando el proyecto portable, con la condición de correrse desde la App de Expo. Además permite escanear el enlace a la App, o compartirlo. 
+
+•	Organización
+
+Boilerplate - Estructura de los ficheros.
+
+1.	/.
+2.	├── .expo
+3.	├── assets
+4.	├── components
+5.	│ └──plantillaFour.js
+6.	│ └──plantillaTree.js
+7.	├── node_modules
+8.	├── .gitignore
+9.	├── .watchmanconfig
+10.	├── App.js
+11.	├── app.json
+12.	├── babel.config.js
+13.	├── package.json
+14.	├── README.md
+15.	├── Thumbs.db
+16.	├──yarm.lock
+
+•	Layout
+
+Disposición general de los bloques del sitio, sus módulos y los handles o hooks para llamarlos (rutas).
+
+    •	Grilla 3x3: Basta con ir a la página de la App y esperar a que el splash termine de ejecutarse. 
+
+    •	Grilla 4x4: Al dar clic sobre “Go FourGame” redirige a la grilla del juego de 4x4, es posible regresar a la vista anterior con el botón “Go TreeGame” o bien con la flecha de retorno ubicada en la parte superior izquierda de la pantalla. 
+•	Funciones 
+Nombre de cada módulo, sus parámetros, peculiaridades, de dónde obtiene los datos y como se transforman.
+
+•	App: 
+
+-	App: es un componente que contiene el elemento “createStackNavigator” de react navigation que permite la gestión de vistas y la transición entre una y otra, en el caso del juego, cuenta con dos vistas : “TreeGame” para el juego con grilla de 3x3 y “FourGame” para la grilla de 4x4. Con las opciones de navegación es posible establecer el color y estilo de los headers de cada vista así como el componente que se renderea en cada vista. 
+
+•	plantillaTree: 
+
+-	TreeGame: es un componente que incluye la lógica y los gráficos del juego de grilla 3x3, tiene como estado una matriz de posiciones (gameState), el jugado en turno (currentPlayer) y el icono en turno (currentIcon). A continuación se describen las funciones expuestas en este componente:
+
+    - initializeState: Actualiza el estado a una partida en blanco, esta función se usa para montar el componente en (componentDidMount) y además para reiniciar una partida cuando hay un ganador (función “onTilePress”), cuando hay un empate (nadie gana) o cuando se oprime el botón “New GamePress”).
+
+    - getWinner: esta función evalúa las casillas que han sido seleccionadas y detiene el juego cuando una partida se gana en diagonal derecha o izquierda, en columna o fila, además evalúa si todas las casillas han sido seleccionadas y no nadie ha ganado. Retorna un arreglo de dos casillas, en el primero se devuelve 1 si ha ganado el primer jugador (con icono de ardilla), devuelve -1 si el jugador 2 ha ganado la partida (con icono de mazo) y devuelve 2 si hubo empate o ninguno ha ganado. En la segunda posición del vector, se devuelve 0 si la partida ganadora es una columna, 1 si ganó una fila, 2 si ganó la diagonal izquierda, 3 si ganó la diagonal derecha y 4 si no hubo ganador. La lógica de elección, consiste en sumar valores de acuerdo a las casillas seleccionadas y evaluar el resultado según la partida.
+
+    - onTilePress: evalúa los estados y renderea los cambios necesarios de acuerdo con la interacción del usuario, coloca a un jugador en la grilla y actualiza el estado de la misma (líneas 80-84), switchea el turno de jugada con su icono correspondiente (líneas 86 a 89) y evalúa las partidas ganadas, para cada caso, desata una alerta con el numero e icono del jugador, además indica la partida ganadora, además reinicia el juego de forma automática. 
+
+    - onNewGame: inicializa la partida cuando se clickea un botón.
+
+    - renderIcon: identifica el estado de una casilla y renderea el icono de ardilla o mazo según sea el caso, además aquí se especifica el tamaño de los iconos. 
+
+    - static.navigationOtions: indica que esta será la primera pantalla de las opciones de navegación.
+
+    - En el return: aquí se dibuja la grilla, cada casilla incluye un elemento TouchableOpacity con un evento onPress que desata la función OnTilePress que pasa como parámetro la coordenada de la casilla, adicionalmente pide la actualización del icono según su coordenada. Agrega dos botones, el que desata el reinicio del juego y el que solicita el cambio de vista con la función “this.props.navigation.navigate ('FourGame')” que redirige a la segunda vista. 
+
+    Por último se agregan los estilos para para el texto y la grilla dentro de la variable styles que guarda dentro de la propiedad créate del elemento styleSheet los objetos con estilo para cada texto, icono y grilla.
+    
+
+•	pantillaFour:
+
+Incluye las funciones que se incorporan en la grilla de3x3 adaptando los estados a una grilla mayor. Esta vista incluye un botón que redirige a la vista anterior por medio de un evento onPress que desata la función de react-navigation: “this.props.navigation.goBack ()” para poder volver atrás.
+
+
+9. Organización y distribución de tareas:
+
+Issues para Sprint 1
+
+•	Instalación de todas las dependencias necesarias para el funcionamiento de la App.
+
+•	Despliegue de la aplicación de prueba en Expo App para Android.
+
+•	Grilla de 3x3 desplegada en la App.
+
+•	Build de Android listo en Expo. 
+
+Issues Sprint 2 
+
+•	Juego completo en 3x3.
+
+•	Juego completo en 4x4.
+
+•	Navegación entre vistas.
+
+•	Splash de carga personalizado. 
+
+Issues Sprint 3: 
+
+•	Documentación
+
+•	Test con Jest
+
+•	Dar estilos a botones, texto e iconos
+
+•	Anadir vista con botones de “comenzar” y “salir”
+
+•	Añadir si es posible otro juego (se sugiere whack a mole o 
+google’s dinosaur)
+
+10. Equipo y contacto:
+
+•	Yocelin García
+
+Habilidad para programar en CSS, HTML, JavaScript, React JS y React Native. Hace uso de GitHub colaborativo y presenta buena lógica de extracción de datos de API´s.
+
+Contacto:
+
+•	Slack: YOCELIN GARCIA ROMERO
+
+•	see [GitHub] (https://github.com/YocelinGR)
+
+•	FaceBook: @Yocelin Garcia Romero
+
+•	Correo: garcia_romero.y@hotmail.com
+
+
