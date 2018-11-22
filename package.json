@@ -6,17 +6,32 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts myApp/**/*.spec.js",
+    "test-watch": "npm run test -- --watch --watch-extensions js --growl"
   },
   "dependencies": {
     "expo": "^31.0.2",
-    "expo-cli": "^2.4.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "expo-cli": "^2.3.8",
     "react-native-elements": "^0.19.1",
+    "react-native-offline": "^3.14.1",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-expo": "^5.0.0",
+    "chai": "^4.2.0",
+    "enzyme": "^3.7.0",
+    "istanbul": "^1.0.0-alpha.2",
+    "jest": "^23.6.0",
+    "mocha": "^5.2.0",
+    "proxyquire": "^2.1.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.6.3",
+    "react-native": "^0.57.5",
+    "react-native-mock": "^0.3.1",
+    "react-test-renderer": "^16.6.3",
+    "sinon": "^7.1.1"
   }
 }
