@@ -88,7 +88,6 @@ Es necesario presentar bocetos de la estructura de cada plantilla del sitio, rea
 
 ![Wireframe vista 3:grilla 4x4]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/wireframe3.jpg?raw=true)
 •	Diseño del sitio final:
-![Wireframe vista 1: inicio ]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/ardilla.png?raw=true)
 
 ![Wireframe vista 2: grilla 3x3]( https://github.com/YocelinGR/react-native-app-game/blob/master/assets/screen3.png?raw=true)
 
