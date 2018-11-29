@@ -1,4 +1,11 @@
 # Tic Tac Toe
+
+Whack a Mole Tap! es un juego nativo para Android construido en React-Native.
+
+![data-dashboard](https://github.com/YocelinGR/YocelinGR.github.io/blob/master/assets/whack-a-mole.png?raw=true)
+
+###  Desarrollado para [Laboratoria](http://laboratoria.la)
+
 ## Documentación y desarrollo
 ________________________________________
 1. Getting started
